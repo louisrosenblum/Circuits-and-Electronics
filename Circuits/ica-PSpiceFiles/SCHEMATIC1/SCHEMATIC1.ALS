@@ -1,0 +1,8 @@
+.ALIASES
+R_R2            R2(1=0 2=N00804 ) CN @ICA.SCHEMATIC1(sch_1):INS950@ANALOG.R.Normal(chips)
+R_R3            R3(1=N00804 2=0 ) CN @ICA.SCHEMATIC1(sch_1):INS786@ANALOG.R.Normal(chips)
+G_G1            G1(3=0 4=N00804 1=N00804 2=0 ) CN @ICA.SCHEMATIC1(sch_1):INS838@ANALOG.G.Normal(chips)
+R_R1            R1(1=N00880 2=N00804 ) CN @ICA.SCHEMATIC1(sch_1):INS862@ANALOG.R.Normal(chips)
+V_V1            V1(+=N00880 -=0 ) CN @ICA.SCHEMATIC1(sch_1):INS914@SOURCE.VDC.Normal(chips)
+R_R4            R4(1=0 2=0 ) CN @ICA.SCHEMATIC1(sch_1):INS1732@ANALOG.R.Normal(chips)
+.ENDALIASES

@@ -1,0 +1,6 @@
+* source LAB7
+V_V1         N00150 0 DC 0Vdc AC 1Vac 
+R_R1         N00150 N00157  50 TC=0,0 
+R_R2         N00157 N00161  20 TC=0,0 
+L_L1         N00161 N00165  10mH  
+C_C1         0 N00165  2.533uF  TC=0,0 

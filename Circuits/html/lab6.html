@@ -1,0 +1,218 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>lab6</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-31"><meta name="DC.source" content="lab6.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Problem #6</a></li><li><a href="#3">Problem #7</a></li></ul></div><pre class="codeinput"><span class="comment">% Anthony Rosenblum</span>
+<span class="comment">% EELE 203</span>
+<span class="comment">% 5/13/2018</span>
+<span class="comment">% Lab 6</span>
+</pre><h2 id="2">Problem #6</h2><pre class="codeinput">j = sqrt(-1);
+w = [0:10:2000]*2*pi;
+r1 = 1000/(2*pi);
+c = 10^-6;
+
+<span class="comment">% First order</span>
+p = abs(1./(r1*10^-6*j*w + 1));
+
+plot(w,p)
+title(<span class="string">'Linear Magnitude Plot for #6'</span>)
+xlabel(<span class="string">'Frequency (rad/s)'</span>)
+ylabel(<span class="string">'Magnitude (V/V)'</span>)
+
+hold
+
+<span class="comment">% Second order</span>
+k = abs((1/(r1*r1*c*c))./((j*w).^2 + (j*w)*((r1*(c+c) + r1 * c)/(r1*r1*c*c)) + 1/(r1*r1*c*c)));
+
+plot(w,k)
+
+<span class="comment">% Q = 0.707, RLC</span>
+
+r3 = sqrt(50660.59);
+l3 = 39.4784176^-1;
+
+n = abs((1/(l3*c))./((j*w).^2 + (j*w)*(r3/l3)+ 1/(l3*c)));
+
+plot(w,n)
+
+<span class="comment">% Q = 1, RLC</span>
+
+r4 = (1000 * 2 * pi)*(0.02533);
+
+m = abs((1/(l3*c))./((j*w).^2 + (j*w)*(r4/l3)+ 1/(l3*c)));
+
+plot(w,m)
+
+legend(<span class="string">'1st order RC'</span>,<span class="string">'2nd order RC'</span>, <span class="string">'RLC, Q = 0.707'</span>, <span class="string">'RLC, Q=1'</span>)
+</pre><pre class="codeoutput">Current plot held
+</pre><img vspace="5" hspace="5" src="lab6_01.png" alt=""> <h2 id="3">Problem #7</h2><pre class="codeinput">wmin = 0.01 * 2 * pi;
+wmax = 100000 * 2 * pi;
+com1 = logspace(log10(wmin),log10(wmax));
+com2 = [0:100:100000];
+
+g = 20 * log(abs((1/(r1*r1*c*c))./((j*com1).^2 + (j*com1)*((r1*(c+c) + r1 * c)/(r1*r1*c*c)) + 1/(r1*r1*c*c))));
+
+f = 20 * log(abs((1/(r1*r1*c*c))./((j*com1).^2 + (j*com1)*((r1*(c+c) + r1 * c)/(r1*r1*c*c)) + 1/(r1*r1*c*c))));
+
+v = 20 * log(abs((1/(l3*c))./((j*com1).^2 + (j*com1)*(r3/l3)+ 1/(l3*c))));
+
+x = 20 * log(abs((1/(l3*c))./((j*com1).^2 + (j*com1)*(r4/l3)+ 1/(l3*c))));
+
+semilogx(com1,g)
+hold
+semilogx(com1,f)
+
+semilogx(com1,v)
+
+semilogx(com1,x)
+hold <span class="string">off</span>
+
+
+title(<span class="string">'Bode Magnitude Plot'</span>)
+xlabel(<span class="string">'Frequency (rad/s)'</span>)
+ylabel(<span class="string">'Magnitude dB'</span>)
+legend(<span class="string">'1st order RC'</span>,<span class="string">'2nd order RC'</span>, <span class="string">'RLC, Q = 0.707'</span>, <span class="string">'RLC, Q=1'</span>)
+</pre><pre class="codeoutput">Current plot released
+Warning: Ignoring extra legend entries. 
+</pre><img vspace="5" hspace="5" src="lab6_02.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+% Anthony Rosenblum
+% EELE 203
+% 5/13/2018
+% Lab 6
+
+%% Problem #6
+j = sqrt(-1);
+w = [0:10:2000]*2*pi;
+r1 = 1000/(2*pi);
+c = 10^-6;
+
+% First order
+p = abs(1./(r1*10^-6*j*w + 1));
+
+plot(w,p)
+title('Linear Magnitude Plot for #6')
+xlabel('Frequency (rad/s)')
+ylabel('Magnitude (V/V)')
+
+hold 
+
+% Second order
+k = abs((1/(r1*r1*c*c))./((j*w).^2 + (j*w)*((r1*(c+c) + r1 * c)/(r1*r1*c*c)) + 1/(r1*r1*c*c)));
+
+plot(w,k)
+
+% Q = 0.707, RLC
+
+r3 = sqrt(50660.59);
+l3 = 39.4784176^-1;
+
+n = abs((1/(l3*c))./((j*w).^2 + (j*w)*(r3/l3)+ 1/(l3*c)));
+
+plot(w,n)
+
+% Q = 1, RLC
+
+r4 = (1000 * 2 * pi)*(0.02533);
+
+m = abs((1/(l3*c))./((j*w).^2 + (j*w)*(r4/l3)+ 1/(l3*c)));
+
+plot(w,m)
+
+legend('1st order RC','2nd order RC', 'RLC, Q = 0.707', 'RLC, Q=1')
+
+%% Problem #7
+
+wmin = 0.01 * 2 * pi;
+wmax = 100000 * 2 * pi;
+com1 = logspace(log10(wmin),log10(wmax));
+com2 = [0:100:100000];
+
+g = 20 * log(abs((1/(r1*r1*c*c))./((j*com1).^2 + (j*com1)*((r1*(c+c) + r1 * c)/(r1*r1*c*c)) + 1/(r1*r1*c*c))));
+
+f = 20 * log(abs((1/(r1*r1*c*c))./((j*com1).^2 + (j*com1)*((r1*(c+c) + r1 * c)/(r1*r1*c*c)) + 1/(r1*r1*c*c))));
+
+v = 20 * log(abs((1/(l3*c))./((j*com1).^2 + (j*com1)*(r3/l3)+ 1/(l3*c))));
+
+x = 20 * log(abs((1/(l3*c))./((j*com1).^2 + (j*com1)*(r4/l3)+ 1/(l3*c))));
+
+semilogx(com1,g)
+hold 
+semilogx(com1,f)
+
+semilogx(com1,v)
+
+semilogx(com1,x)
+hold off
+
+
+title('Bode Magnitude Plot')
+xlabel('Frequency (rad/s)')
+ylabel('Magnitude dB')
+legend('1st order RC','2nd order RC', 'RLC, Q = 0.707', 'RLC, Q=1')
+##### SOURCE END #####
+--></body></html>

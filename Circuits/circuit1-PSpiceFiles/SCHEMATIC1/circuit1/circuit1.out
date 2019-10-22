@@ -1,0 +1,124 @@
+
+**** 03/08/18 12:56:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-circuit1"  [ Z:\circuit1-PSpiceFiles\SCHEMATIC1\circuit1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "circuit1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of Z:\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 25us 0 0.01us 
+.STEP LIN PARAM R3 1000 3000 2000 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUIT1
+V_V1         N00193 0  
++PULSE 5V 0V 0 0 0 25us 50us
+R_R1         N00193 N00200  2k TC=0,0 
+R_R2         0 N00200  2k TC=0,0 
+R_R3         N00224 N00200  {R3} TC=0,0 
+L_L1         0 N00224  10mH  
+.PARAM  r3=1000
+
+**** RESUMING circuit1.cir ****
+.END
+
+**** 03/08/18 12:56:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-circuit1"  [ Z:\circuit1-PSpiceFiles\SCHEMATIC1\circuit1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM R3 =    1.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00193)    5.0000 (N00200)    1.2500 (N00224)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.875E-03
+
+    TOTAL POWER DISSIPATION   9.38E-03  WATTS
+
+
+**** 03/08/18 12:56:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-circuit1"  [ Z:\circuit1-PSpiceFiles\SCHEMATIC1\circuit1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM R3 =    3.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00193)    5.0000 (N00200)    1.8750 (N00224)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.563E-03
+
+    TOTAL POWER DISSIPATION   7.81E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/08/18 12:56:17 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-circuit1"  [ Z:\circuit1-PSpiceFiles\SCHEMATIC1\circuit1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+ ****     CURRENT STEP                     PARAM R3 =    3.0000E+03
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .08
+

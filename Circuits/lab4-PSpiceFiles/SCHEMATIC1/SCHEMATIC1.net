@@ -1,0 +1,8 @@
+* source LAB4
+R_R1         VB 0  15 TC=0,0 
+R_R2         VC 0  40 TC=0,0 
+R_R3         VA 0  30 TC=0,0 
+R_R4         VB VC  4 TC=0,0 
+R_R5         VC 0  20 TC=0,0 
+R_R6         VA VB  4 TC=0,0 
+V_V1         VA 0 12Vdc

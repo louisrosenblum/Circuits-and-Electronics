@@ -1,0 +1,8 @@
+* source CIRCUIT1
+V_V1         N00193 0  
++PULSE 5V 0V 0 0 0 25us 50us
+R_R1         N00193 N00200  2k TC=0,0 
+R_R2         0 N00200  2k TC=0,0 
+R_R3         N00224 N00200  {R3} TC=0,0 
+L_L1         0 N00224  10mH  
+.PARAM  r3=1000

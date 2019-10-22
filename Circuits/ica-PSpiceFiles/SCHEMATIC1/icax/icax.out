@@ -1,0 +1,87 @@
+
+**** 02/15/18 13:08:46 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-icax"  [ Z:\ica-PSpiceFiles\SCHEMATIC1\icax.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "icax.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of Z:\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ICA
+R_R2         0 N00804  2 TC=0,0 
+R_R3         N00804 0  3 TC=0,0 
+G_G1         0 N00804 N00804 0 3
+R_R1         N00880 N00804  1 TC=0,0 
+V_V1         N00880 0 10
+R_R4         0 0  4 TC=0,0 
+
+**** RESUMING icax.cir ****
+.END
+
+**** 02/15/18 13:08:46 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-icax"  [ Z:\ica-PSpiceFiles\SCHEMATIC1\icax.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00804)   -8.5714 (N00880)   10.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.857E+01
+
+    TOTAL POWER DISSIPATION   1.86E+02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 02/15/18 13:08:46 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-icax"  [ Z:\ica-PSpiceFiles\SCHEMATIC1\icax.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

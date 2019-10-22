@@ -1,0 +1,43 @@
+
+**** 05/16/18 14:13:44 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab3"  [ Z:\lab 3-PSpiceFiles\SCHEMATIC1\lab3.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "lab3.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of Z:\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 10ns SKIPBP 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB 3
+V_V1         N00131 0 10Vdc
+R_R1         N00131 N00537  0 TC=0,0 
+----------------------------$
+ERROR(ORPSIM-16144): Value may not be 0
+C_C1         0 N00541  2.2uF IC=0 TC=0,0 
+L_L1         N00537 N00541  82mH IC=0 
+
+**** RESUMING lab3.cir ****
+.END
+

@@ -1,0 +1,193 @@
+
+**** 05/23/18 15:14:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab4b"  [ Z:\lab 4b-PSpiceFiles\SCHEMATIC1\lab4b.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "lab4b.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of Z:\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 100m 0 10u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB 4B
+R_R1         N00215 N01332  100 TC=0,0 
+X_U1         0 N01332 N00294 N00287 N00247 uA741
+V_V2         N00294 0 15Vdc
+V_V3         0 N00287 15Vdc
+R_R3         N00247 N01332  100k TC=0,0 
+X_U2         0 N09683 N00294 N00287 N09733 uA741
+R_R4         N00247 N09683  10k TC=0,0 
+R_R5         N10149 N09683  100k TC=0,0 
+R_R6         0 N09733  100 TC=0,0 
+L_L1         N10149 N09733  10uH  
+V_V4         N00215 0  
++SIN 0V 0.0004 100 0 0 0
+
+**** RESUMING lab4b.cir ****
+.END
+
+**** 05/23/18 15:14:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab4b"  [ Z:\lab 4b-PSpiceFiles\SCHEMATIC1\lab4b.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         X_U1.dy         X_U2.dx         X_U2.dy         
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+**** 05/23/18 15:14:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab4b"  [ Z:\lab 4b-PSpiceFiles\SCHEMATIC1\lab4b.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         X_U2.qx         
+               NPN             NPN             
+       LEVEL    1               1            
+          IS  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75         
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 05/23/18 15:14:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab4b"  [ Z:\lab 4b-PSpiceFiles\SCHEMATIC1\lab4b.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00215)    0.0000 (N00247)     .0271 (N00287)  -15.0000 (N00294)   15.0000     
+
+(N01332) 19.11E-06 (N09683) 22.57E-06 (N09733)    -.2629 (N10149)    -.2629     
+
+(X_U1.6)-2.598E-06 (X_U1.7)     .0273 (X_U1.8)     .0273 (X_U1.9)    0.0000     
+
+(X_U2.6) 62.47E-06 (X_U2.7)    -.3944 (X_U2.8)    -.3944 (X_U2.9)    0.0000     
+
+(X_U1.10)    -.6077                   (X_U1.11)   14.9600                       
+
+(X_U1.12)   14.9600                   (X_U1.13)    -.5938                       
+
+(X_U1.14)    -.5938                   (X_U1.53)   14.0000                       
+
+(X_U1.54)  -14.0000                   (X_U1.90)     .0030                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   (X_U2.10)    -.6077                       
+
+(X_U2.11)   14.9600                   (X_U2.12)   14.9600                       
+
+(X_U2.13)    -.5938                   (X_U2.14)    -.5938                       
+
+(X_U2.53)   14.0000                   (X_U2.54)  -14.0000                       
+
+(X_U2.90)   -2.6312                   (X_U2.91)   40.0000                       
+
+(X_U2.92)  -40.0000                   (X_U2.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -3.334E-03
+    V_V3        -3.334E-03
+    V_V4         1.911E-07
+    X_U1.vb     -2.598E-11
+    X_U1.vc      1.397E-11
+    X_U1.ve      1.594E-11
+    X_U1.vlim    2.979E-06
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.001E-11
+    X_U2.vb      6.247E-10
+    X_U2.vc      1.426E-11
+    X_U2.ve      1.565E-11
+    X_U2.vlim   -2.631E-03
+    X_U2.vlp    -4.263E-11
+    X_U2.vln    -3.737E-11
+
+    TOTAL POWER DISSIPATION   1.00E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 05/23/18 15:14:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-lab4b"  [ Z:\lab 4b-PSpiceFiles\SCHEMATIC1\lab4b.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .99
+

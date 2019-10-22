@@ -1,0 +1,46 @@
+
+**** 02/01/18 12:43:27 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-dcsweep1"  [ Z:\lab4-PSpiceFiles\SCHEMATIC1\dcsweep1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "dcsweep1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of Z:\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN 12STIMULUS 0 12 1 
+--------$
+ERROR(ORPSIM-16063): Must be 'I' or 'V'
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB4
+R_R1         VB 0  15 TC=0,0 
+R_R2         VC 0  40 TC=0,0 
+R_R3         VA 0  30 TC=0,0 
+R_R4         VB VC  4 TC=0,0 
+R_R5         VC 0  20 TC=0,0 
+R_R6         VA VB  4 TC=0,0 
+V_V1         VA 0 12STIMULUS
+
+**** RESUMING dcsweep1.cir ****
+.END
+
